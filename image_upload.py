@@ -1,4 +1,7 @@
 import json
+import base64
+import boto3
+import time
 """
 This model provides a mechanism to upload an image to an S3 bucket.
     1. API Gateway or AWS SDKs(boto3)
@@ -10,28 +13,9 @@ This model provides a mechanism to upload an image to an S3 bucket.
 
 
 """
-This function is the lambda function for doing the object detection
-When there is a image upload into the S3 bucket,
-this function will be called, passing the event details and the context
-"""
-
-
-def lambda_handler(event, context):
-    # TODO implement
-    print(event)
-    return event;
-
-
-"""
 This function is the lambda function for uploading the image via API gateway
 When a http POST request with the image in its body is sent to the gateway it will called this function
 """
-
-
-import json
-import base64
-import boto3
-import time
 
 
 def lambda_handler(event, context):
@@ -48,3 +32,4 @@ def lambda_handler(event, context):
         'statusCode': 200,
         'body': json.dumps('image uploaded!')
     }
+
