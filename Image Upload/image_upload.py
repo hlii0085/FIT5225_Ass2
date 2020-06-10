@@ -20,6 +20,10 @@ def lambda_handler(event, context):
 
     return {
         'statusCode': 200,
-        'body': json.dumps('image uploaded!')
+        'body': json.dumps('image uploaded!'),
+        'headers': {
+            'Access-Control-Allow-Headers': '*'
+        },
+        
     }
 
