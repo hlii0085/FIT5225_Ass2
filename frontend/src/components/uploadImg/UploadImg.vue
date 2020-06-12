@@ -2,7 +2,7 @@
   <div>
     <el-upload
       class="upload-demo"
-      action="https://vr9y6qyti0.execute-api.us-east-1.amazonaws.com/tag/upload-image/"
+      action="https://vr9y6qyti0.execute-api.us-east-1.amazonaws.com/api/upload-image"
       :on-preview="handlePreview"
       :on-remove="handleRemove"
       :file-list="fileList"
@@ -12,7 +12,7 @@
     >
       <el-button size="small" type="primary">Click to upload</el-button>
       <div slot="tip" class="el-upload__tip">
-        image files with a size less than 500kb
+        image with a size less than 500kb
       </div>
     </el-upload>
   </div>
@@ -55,6 +55,8 @@ export default {
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "image/jpeg");
 
+      // var file = file;
+
       var requestOptions = {
         method: "POST",
         headers: myHeaders,
@@ -63,12 +65,14 @@ export default {
       };
 
       fetch(
-        "https://vr9y6qyti0.execute-api.us-east-1.amazonaws.com/tag/upload-image",
+        "https://vr9y6qyti0.execute-api.us-east-1.amazonaws.com/api/upload-image",
         requestOptions
       )
         .then((response) => response.text())
         .then((result) => console.log(result))
+        // .then((response) => file.onSuccess(response.data))
         .catch((error) => console.log("error", error));
+      file.onSuccess(true);
 
       // var data = file;
 
@@ -89,7 +93,7 @@ export default {
 
       // xhr.send(data);
 
-      // return false;
+      return false;
     },
   },
 };
