@@ -65,7 +65,8 @@ export default {
           "fdsfdsfdsfsdfdsfdsfsdfdsfsdfdsfs",
         ],
       },
-      text: "123",
+      text:
+        "Submit tags to see the result. If you wanna send multiple tags, use Add Tag.",
     };
   },
   methods: {

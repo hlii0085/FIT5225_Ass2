@@ -8,7 +8,7 @@
       :file-list="fileList"
       list-type="picture"
       :headers="headers"
-      :http-request="beforeUpload"
+      :before-upload="beforeUpload"
     >
       <el-button size="small" type="primary">Click to upload</el-button>
       <div slot="tip" class="el-upload__tip">

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.10.1",
+    "aws-amplify-vue": "^0.2.12-beta.0",
     "axios": "^0.19.2",
     "core-js": "^3.6.5",
     "element-ui": "^2.13.2",

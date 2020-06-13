@@ -9,6 +9,14 @@ const routes = [
     redirect: "/home",
   },
   {
+    path: "/login",
+    name: "login",
+    meta: {
+      title: "Login",
+    },
+    component: () => import("@/components/HelloWorld.vue"),
+  },
+  {
     path: "/dashboard",
     name: "dashboard",
     meta: {
